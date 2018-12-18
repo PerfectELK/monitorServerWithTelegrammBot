@@ -35,7 +35,7 @@ public class Main {
         }else if("Monitor".equals(args[0])){
             while (true) {
                 try {
-                    InetAddress address = InetAddress.getByName(args[0]);
+                    InetAddress address = InetAddress.getByName(args[4]);
                     boolean reachable = address.isReachable(10000);
                     if (!reachable) {
                         Telegram telegram = new Telegram(args[1],args[2]);
@@ -44,8 +44,6 @@ public class Main {
                     }
                     Thread.sleep(1000 * 300);
                 } catch (Exception e) {
-                    e.printStackTrace();
-
                     Telegram telegram = new Telegram(args[1],args[2]);
                     telegram.SendTelegramRequest(p);
                 }
