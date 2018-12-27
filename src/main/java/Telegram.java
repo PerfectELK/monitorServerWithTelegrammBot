@@ -38,6 +38,7 @@ public class Telegram {
 
       }
   }
+
   public void SendTelegramRequest(Proxy p) throws IOException {
       String url = apiUrl + apiMethod + this.chatId + "&parse_mode=markdown&text=" + this.message;
 
@@ -60,9 +61,4 @@ public class Telegram {
       }
   }
 
-  public void alert(String message){
-
-        System.out.println("Отправлено");
-
-  }
 }
